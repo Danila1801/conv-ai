@@ -1,0 +1,52 @@
+{
+ "1": [
+  "P1",
+  25,
+  "Hi, we're Group 7. Our paper is Decentralising LLM Alignment, by Oriane Peter and Kate Devlin from King's College London. On the right you see the problem in one picture: very different people ask very different questions, and they get very similar answers. The question of the paper is: who decides how a chatbot answers? I'll start with the problem, Presenter 2 explains their solution, and Presenter 3 the results and our opinion."
+ ],
+ "2": [
+  "P1",
+  70,
+  "First, a real number. Atari and colleagues gave GPT the World Values Survey, the same questions answered by almost a hundred thousand people in 65 countries. GPT's answers were closest to the United States, and also to countries like Canada, Germany and, yes, the Netherlands. They were furthest from countries like Ethiopia and Pakistan. The correlation is minus 0.70: the more a culture differs from the US, the worse GPT matches it. These are called WEIRD societies: Western, Educated, Industrialised, Rich and Democratic. The authors say the training data starts this bias, and alignment makes it stronger."
+ ],
+ "3": [
+  "P1",
+  75,
+  "How does alignment make it stronger? Through RLHF, the step that made ChatGPT useful. People rank answers, a reward model learns their taste, and the language model is trained to please that reward model. This chart is from Kirk and colleagues, a paper our authors cite. Grey is the model before RLHF, orange is after. The score measures how different the answers are when you ask the same question several times. It drops from about 0.8 to between 0.07 and 0.16, so five to eleven times less variety, and a bigger model doesn't fix it. This is called mode collapse: the model keeps giving one kind of answer, the kind its raters liked. Over to Presenter 2."
+ ],
+ "4": [
+  "P2",
+  75,
+  "Thanks. People already tried to fix this by asking the public. On the left: from 44 people in focus groups up to fifteen thousand people in five countries. The orange one is Anthropic's Collective Constitutional AI. On the right is what happened there. About a thousand Americans cast more than 38,000 votes on 1,127 statements. That became a public constitution of 75 principles. According to our paper, Anthropic then adopted just one of them in its later models. That's the authors' point: more voices doesn't mean more power. They use Foucault: power and knowledge feed each other, so whoever aligns the model decides what counts as harmful or helpful."
+ ],
+ "5": [
+  "P2",
+  70,
+  "Their solution is three requirements. Context: you align a model for one specific use and one group of people, because there's no general human. Pluralism: people disagree about values, that's normal, so don't squash it into one answer. And participation: the affected people get real control. The bar at the bottom shows what they mean. Participation goes from 'consult', where you just ask people, to 'own', where people decide. The earlier projects like PRISM sit at 'consult'. The authors want to move to the right. And this is a position paper, so there are no experiments. They test the idea on two made-up use cases."
+ ],
+ "6": [
+  "P2",
+  65,
+  "Here are the two cases, drawn as mock-ups. On the left, a voter advice chatbot, like a chat version of StemWijzer. People already ask ChatGPT how to vote, but it was never built to be neutral, so the power to inform voters moves to private companies. On the right, a character in a video game, where one language model plays every character. Studios often lack diverse teams, so stereotypes of real communities risk getting worse. For both, they ask the same three things: what's at stake, who has the power, and how alignment could fix it. Presenter 3 will show what came out."
+ ],
+ "7": [
+  "P3",
+  60,
+  "Thanks. To understand the results you need one more tool: three kinds of pluralism. Take a question people disagree on: should the Netherlands build more nuclear plants? An Overton answer shows all the reasonable views in one reply. A steerable answer takes the view you ask for. A distributional model answers yes or no as often as the population does. The authors pick Overton for the voter chatbot, steerable for game characters, and reject distributional for both."
+ ],
+ "8": [
+  "P3",
+  75,
+  "Here is the main result. The same framework gives opposite answers. The voter chatbot gets RLHF, because every voter should get consistent answers, so here mode collapse may actually help. It also retrieves from trusted sources, the real party programmes. The game character gets LoRA, a small add-on trained on top of the model. It's much cheaper, so a community could train its own, and take it back if a studio misuses it, although the authors admit many communities still lack the money and skills. Who decides? For the voter bot, the state, parties and citizens together. For the game, each community for itself. So mode collapse is a bug in one case and a feature in the other: there is no one-size-fits-all alignment."
+ ],
+ "9": [
+  "P3",
+  75,
+  "What convinced us is that the paper links ethics to real techniques like RLHF, LoRA and retrieval. What's still open: there are no experiments, both cases are made up. Who speaks for a community? And our own view: if the state runs the voter chatbot, power moves from companies to governments, and that's not always safer. The authors say the next step is to test their ideas, which fits today's lecture on evaluation. Here's how we would start: Overton coverage. Ask the bot a question and count which parties' positions it mentions. Four out of six is 67 percent. So our question for you: what else would you measure to know if a voter chatbot is fair? Thank you."
+ ],
+ "10": [
+  "-",
+  0,
+  "Not presented. Keep it ready for Q&A."
+ ]
+}
