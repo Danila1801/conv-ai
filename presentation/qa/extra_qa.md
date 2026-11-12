@@ -35,3 +35,20 @@ Rejected from the grill: Kimi thought slide 13 was wrong to link Friday's lectur
 - "It's a position paper. The contribution is the framework, and testing it is their stated future work."
 - "The paper doesn't address that directly, but our view is ..."
 - "Same technique, different verdict: that's the whole point of context."
+
+## New in deck v4 (12 Nov 2026, after Antonia's review)
+
+Slide numbers below are v4. Every fact was checked against the source on 12 Nov 2026.
+
+| Question | Short answer | Who |
+|---|---|---|
+| Tay was not an LLM. Why mention it? | The paper cites it (Victor 2016, NYT) as an example of early chatbots copying toxic views from their data. It shows the problem alignment was built to solve, not RLHF itself. Tay was halted in less than 24 hours. | P1 |
+| Where does 85% come from? | Ouyang et al. 2022 (InstructGPT): 175B InstructGPT answers were preferred to 175B GPT-3 answers 85 +- 3% of the time, rated by OpenAI's labellers on API prompts. The 1.3B InstructGPT was also preferred to 175B GPT-3, 100x fewer parameters. | P1 |
+| The labellers were mostly Filipino and Bangladeshi. So why is GPT WEIRD? | Two reasons. Labellers were hired partly for at least ~75% agreement with the researchers' own labels (soft cutoff, Ouyang Appendix B.1), and the researchers wrote the instructions and answered edge cases. So diverse people still label to the client's norms, which is exactly the paper's workers point. Also the WEIRD skew starts in the training data; the paper says alignment amplifies it. | P1 |
+| Is r = -0.70 about GPT-4? | Atari et al. 2023 compare GPT's answers on psychological measures with large cross-cultural survey data. The fit declines as societies get less WEIRD, r = -.70. Don't claim more detail than that. | P1 |
+| What is "210 + 55"? | Miceli & Posada 2022 (CSCW): 210 annotation instruction documents and 55 interviews (workers, managers, requesters), platforms in Venezuela and a BPO in Argentina. Finding: instructions reproduce the requester's worldview, and precarious workers obey them. | P2 |
+| Is the "< $2 an hour" about OpenAI? | Muldoon et al. 2023 report that Sama workers on content moderation contracts were paid less than $2 an hour (citing TIME, Perrigo 2023). The TIME story was about an OpenAI contract, but on the slide we only claim what Muldoon says. | P2 |
+| What should labs do about workers? | The paper's fix: document who labelled and under what conditions, e.g. CrowdWorkSheets (Diaz et al. 2022). **Our view:** also pay for the time, not per item, so workers can say what they really think. | P2 |
+| Isn't the comparison table your opinion? | No, every cell summarises the paper's own section "Context, Pluralism, and Participation in Previous Work". Cells marked "not discussed" are cells the paper doesn't assess. The only number from outside is the CCAI funnel (Anthropic 2023). | P2 |
+| PRISM was 75 countries, why "English speakers"? | The paper describes it as 1,500 English speakers. PRISM's own paper: 1,500 participants from 75 countries, 8,011 conversations, all in English. Both are true. | P2 |
+| Why is Varshney "partly" on context? | The paper likes his community LoRA repository but criticises it as "one-size-fits-all": no word on where it works and where it doesn't, e.g. echo chambers (Kirk 2024a). | P2 |

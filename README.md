@@ -21,16 +21,16 @@ PDF in `course/papers/`.
 
 | File | What it is |
 |---|---|
-| `presentation/deck/Group7-v3.pdf` | **The deck we present.** 9 slides + backup |
-| `presentation/deck/Group7-v3.pptx` | Same deck, editable. Your script is in the speaker notes |
-| `presentation/deck/Group7-v3-speaker-cards.pdf` | Script per presenter, print it or keep it on your phone |
+| `presentation/deck/Group7-v4.pdf` | **The deck we present.** 12 slides + backup (v4, 12 Nov 2026, after Antonia's review) |
+| `presentation/deck/Group7-v4.pptx` | Same deck, editable. Your script is in the speaker notes |
+| `presentation/deck/Group7-v4-speaker-cards.pdf` | Script per presenter, print it or keep it on your phone |
 | `presentation/qa/extra_qa.md` | Hard questions with answers, and who answers them |
 | `presentation/qa/group7-study-guide.pdf` | Paper explained, glossary, basic Q&A |
 | `presentation/qa/kimi_grill.md` | A second AI model reviewed the deck like a strict TA |
 
-**Who presents what:** P1 = slides 1-3 (the problem), P2 = slides 4-6 (power, the idea, the two cases), P3 = slides 7-9 (pluralism, result, our view). Decide between us who is P1, P2 and P3.
+**Who presents what:** P1 = slides 1-5 (why RLHF exists, its cost, the paper's claim), P2 = slides 6-8 (context, the workers, the table of earlier fixes), P3 = slides 9-12 (the two cases, pluralism, result, our view). Decide between us who is P1, P2 and P3.
 
-**Before Friday:** read your part out loud twice, then say it in your own words. Do one timed run on Thursday evening. Target: 8:30.
+**Before Friday:** read your part out loud twice, then say it in your own words. Do one timed run on Thursday evening. Current planned narration: 8:40 (727 words, slow pace). Keep the full run under 9:30.
 
 ### Changing the deck
 
@@ -43,7 +43,7 @@ python charts.py
 python build_deck.py
 powershell -ExecutionPolicy Bypass -File export_pdf.ps1
 python build_cards.py
-python ../tools/keyboard_check.py Group7-v3.pptx Group7-v3.pdf
+python ../tools/keyboard_check.py Group7-v4.pptx Group7-v4.pdf
 ```
 
 Small edits straight in the .pptx are fine too. Just tell the group in the chat.
@@ -53,7 +53,7 @@ Small edits straight in the .pptx are fine too. Just tell the group in the chat.
 ## Folders
 
 ```
-presentation/   deck (current), qa, tools, archive (v1, v2)
+presentation/   deck (current), qa, tools, archive (v1, v2, v3)
 course/         lectures, papers, Canvas notes
 notebooks/      weekly notebooks (a1 has a filled version)
 project/        final project (tutorial-style notebook, due 9 Dec)

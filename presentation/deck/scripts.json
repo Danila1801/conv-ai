@@ -1,50 +1,65 @@
 {
  "1": [
   "P1",
-  25,
-  "Hi, we're Group 7. Our paper is Decentralising LLM Alignment, by Oriane Peter and Kate Devlin from King's College London. On the right you see the problem in one picture: very different people ask very different questions, and they get very similar answers. The question of the paper is: who decides how a chatbot answers? I'll start with the problem, Presenter 2 explains their solution, and Presenter 3 the results and our opinion."
+  20,
+  "Hi, we're Group 7. Our paper is Decentralising LLM Alignment, by Oriane Peter and Kate Devlin from King's College London. The question behind it is simple: who gets to decide how a chatbot behaves?"
  ],
  "2": [
   "P1",
-  70,
-  "First, a real number. Atari and colleagues gave GPT the World Values Survey, the same questions answered by almost a hundred thousand people in 65 countries. GPT's answers were closest to the United States, and also to countries like Canada, Germany and, yes, the Netherlands. They were furthest from countries like Ethiopia and Pakistan. The correlation is minus 0.70: the more a culture differs from the US, the worse GPT matches it. These are called WEIRD societies: Western, Educated, Industrialised, Rich and Democratic. The authors say the training data starts this bias, and alignment makes it stronger."
+  50,
+  "First, the problem RLHF solved. A pre-trained model only continues text. Ask GPT-3 to explain the moon landing to a six year old, and it writes more questions. Early chatbots also copied toxic language. RLHF fixed this: people rank answers, a reward model learns what they prefer, and the model is trained to score high. People preferred the result 85 percent of the time, and even a model a hundred times smaller beat GPT-3."
  ],
  "3": [
   "P1",
-  75,
-  "How does alignment make it stronger? Through RLHF, the step that made ChatGPT useful. People rank answers, a reward model learns their taste, and the language model is trained to please that reward model. This chart is from Kirk and colleagues, a paper our authors cite. Grey is the model before RLHF, orange is after. The score measures how different the answers are when you ask the same question several times. It drops from about 0.8 to between 0.07 and 0.16, so five to eleven times less variety, and a bigger model doesn't fix it. This is called mode collapse: the model keeps giving one kind of answer, the kind its raters liked. Over to Presenter 2."
+  45,
+  "But whose preferences? OpenAI says it openly. Researchers wrote the labelling rules, and about forty contractors were hired partly for agreeing 75 percent with the researchers' own labels. The labellers came from many countries, but OpenAI admits this group is clearly not representative of its users. Atari and colleagues found GPT fits Western, educated, rich societies best, the so-called WEIRD bias."
  ],
  "4": [
-  "P2",
-  75,
-  "Thanks. People already tried to fix this by asking the public. On the left: from 44 people in focus groups up to fifteen thousand people in five countries. The orange one is Anthropic's Collective Constitutional AI. On the right is what happened there. About a thousand Americans cast more than 38,000 votes on 1,127 statements. That became a public constitution of 75 principles. According to our paper, Anthropic then adopted just one of them in its later models. That's the authors' point: more voices doesn't mean more power. They use Foucault: power and knowledge feed each other, so whoever aligns the model decides what counts as harmful or helpful."
+  "P1",
+  40,
+  "RLHF has a second effect. This chart is from Kirk and colleagues. Light bars are before RLHF, green bars after. The score is how different the answers are to the same question. It drops from about 0.8 to between 0.07 and 0.16, and a bigger model does not fix it. This is mode collapse. Keep it in mind, it comes back."
  ],
  "5": [
-  "P2",
-  70,
-  "Their solution is three requirements. Context: you align a model for one specific use and one group of people, because there's no general human. Pluralism: people disagree about values, that's normal, so don't squash it into one answer. And participation: the affected people get real control. The bar at the bottom shows what they mean. Participation goes from 'consult', where you just ask people, to 'own', where people decide. The earlier projects like PRISM sit at 'consult'. The authors want to move to the right. And this is a position paper, so there are no experiments. They test the idea on two made-up use cases."
+  "P1",
+  40,
+  "That is the core of the paper. Power and knowledge feed each other. A few companies can afford to align a model, so they decide what counts as helpful or harmful. The model spreads that view at scale, and their power grows. Their answer is to decentralise alignment, with three requirements. Over to Presenter 2."
  ],
  "6": [
   "P2",
-  65,
-  "Here are the two cases, drawn as mock-ups. On the left, a voter advice chatbot, like a chat version of StemWijzer. People already ask ChatGPT how to vote, but it was never built to be neutral, so the power to inform voters moves to private companies. On the right, a character in a video game, where one language model plays every character. Studios often lack diverse teams, so stereotypes of real communities risk getting worse. For both, they ask the same three things: what's at stake, who has the power, and how alignment could fix it. Presenter 3 will show what came out."
+  45,
+  "Thanks. Requirement one is context. A lot of alignment work talks about humans in general. The authors say that hides whose views are inside the model, and a system for everything can't even define its harms. Compare the two cards. On the right we know who it serves and what to test. Open-weight models already allow this, for example Meditron for medicine."
  ],
  "7": [
-  "P3",
-  60,
-  "Thanks. To understand the results you need one more tool: three kinds of pluralism. Take a question people disagree on: should the Netherlands build more nuclear plants? An Overton answer shows all the reasonable views in one reply. A steerable answer takes the view you ask for. A distributional model answers yes or no as often as the population does. The authors pick Overton for the voter chatbot, steerable for game characters, and reject distributional for both."
+  "P2",
+  50,
+  "Context also includes the workers. Labelling is often outsourced to people in poor conditions. Miceli and Posada read 210 instruction documents and did 55 interviews: the instructions carry the client's worldview, and workers who need the pay follow them. Sama annotators in Kenya earned under two dollars an hour. So hiring diverse workers is not enough. The fix: report who labelled, and how they worked."
  ],
  "8": [
-  "P3",
-  75,
-  "Here is the main result. The same framework gives opposite answers. The voter chatbot gets RLHF, because every voter should get consistent answers, so here mode collapse may actually help. It also retrieves from trusted sources, the real party programmes. The game character gets LoRA, a small add-on trained on top of the model. It's much cheaper, so a community could train its own, and take it back if a studio misuses it, although the authors admit many communities still lack the money and skills. Who decides? For the voter bot, the state, parties and citizens together. For the game, each community for itself. So mode collapse is a bug in one case and a feature in the other: there is no one-size-fits-all alignment."
+  "P2",
+  60,
+  "How did earlier projects do? This table is the paper's own comparison. Context: most write universal rules; only Rose and colleagues tie data to specific uses. Pluralism: most vote everything into one rule set. Workers: only STELA describes good conditions. And all sit at consult: people give input, the company decides. In Collective Constitutional AI, the public wrote 75 principles, and Anthropic adopted one. Varshney instead lets each community own a small add-on. Over to Presenter 3."
  ],
  "9": [
   "P3",
-  75,
-  "What convinced us is that the paper links ethics to real techniques like RLHF, LoRA and retrieval. What's still open: there are no experiments, both cases are made up. Who speaks for a community? And our own view: if the state runs the voter chatbot, power moves from companies to governments, and that's not always safer. The authors say the next step is to test their ideas, which fits today's lecture on evaluation. Here's how we would start: Overton coverage. Ask the bot a question and count which parties' positions it mentions. Four out of six is 67 percent. So our question for you: what else would you measure to know if a voter chatbot is fair? Thank you."
+  35,
+  "Thanks. To show that context changes the answer, the authors use two made-up cases. On the left, a voter advice chatbot, like a chat version of StemWijzer. On the right, a game where one language model voices every character, and stereotypes of real communities can get worse."
  ],
  "10": [
+  "P3",
+  35,
+  "Requirement two, pluralism, comes in three kinds. Take a question people disagree on. An Overton answer shows all the reasonable views. A steerable answer takes the view it is asked for. A distributional model says yes or no as often as people do. Overton fits the voter bot, steerable fits game characters."
+ ],
+ "11": [
+  "P3",
+  50,
+  "Here is the result: the same requirements give opposite answers. The voter chatbot gets RLHF, because every voter should get consistent answers, so here mode collapse can help. The game uses LoRA, cheap enough for a community to train, own, and take back if a studio misuses it. Who decides? For the voter bot, state, parties and citizens together. For the game, each community. No one-size-fits-all alignment."
+ ],
+ "12": [
+  "P3",
+  50,
+  "What convinced us: the paper links ethics to real techniques. What's open: there are no experiments, and who speaks for a community? Our own view: a state-run voter bot moves power to governments, which is not always safer. We would test it with Overton coverage: count which parties' positions one answer mentions, here four of six. So, what else would you measure to know if a voter chatbot is fair? Thank you."
+ ],
+ "13": [
   "-",
   0,
   "Not presented. Keep it ready for Q&A."
