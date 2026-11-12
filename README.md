@@ -28,6 +28,26 @@ PDF in `course/papers/`.
 | `presentation/qa/group7-study-guide.pdf` | Paper explained, glossary, basic Q&A |
 | `presentation/qa/kimi_grill.md` | A second AI model reviewed the deck like a strict TA |
 
+### What changed in v4 (12 Nov 2026, from Antonia's comments)
+
+| Comment | Where it is now |
+|---|---|
+| The start makes no sense, too much NL vs US | Slides 1-5 rebuilt, the country comparison is gone |
+| Introduce RLHF as a solution first | Slide 2: GPT-3 vs InstructGPT, people preferred InstructGPT 85% of the time |
+| Importance of context | Slide 6: general chatbot vs a chatbot built for one context |
+| Importance of workers' environments | Slide 7: how labelling conditions shape the data (Miceli & Posada 2022, Sama) |
+| Table of the solutions the paper compares | Slide 8: STELA, CCAI, PRISM, Rose, Multilingual Prism, Varshney, with the paper's own verdicts |
+
+### Where everything is
+
+```
+presentation/
+  deck/          the current deck (v4): pdf, pptx, speaker cards + the scripts that build them
+  qa/            extra_qa.md (hard questions + answers, "New in deck v4" at the bottom), study guide, Kimi review
+  tools/         keyboard_check.py (character check), kimi_grill.py (AI review)
+  archive/       old versions v1, v2, v3, only for reference
+```
+
 **Who presents what:** P1 = slides 1-5 (why RLHF exists, its cost, the paper's claim), P2 = slides 6-8 (context, the workers, the table of earlier fixes), P3 = slides 9-12 (the two cases, pluralism, result, our view). Decide between us who is P1, P2 and P3.
 
 **Before Friday:** read your part out loud twice, then say it in your own words. Do one timed run on Thursday evening. Current planned narration: 8:40 (727 words, slow pace). Keep the full run under 9:30.
