@@ -2,7 +2,7 @@
 
 Group: Antonia Bulai, Danila Popusoi, Goktug Yildirim.
 
-This repo started as the place for our paper presentation (13 Nov 2026). The presentation is done, so the repo is now for the **final project**. The old presentation files are still in the git history (last commit that has them: `e1c909a`).
+This repo started as the place for our paper presentation (13 Nov 2026). The presentation is done, so the repo is now mainly for the **final project**. The presentation files are still here, in `presentation/`.
 
 ## The final project
 
@@ -42,7 +42,7 @@ We run at least 50 of these conversations with two different versions of the Exp
 | `research/sources/` | The output of those scripts |
 | `notebook/` | The final notebook (not started yet) |
 | `course/` | Lectures, papers, Canvas notes and the weekly notebooks (`course/notebooks/`, a1 has a filled version) |
-| `tools/keyboard_check.py` | Checks a text file for characters that are not on a normal keyboard |
+| `presentation/` | Our paper presentation from 13 Nov (deck, Q&A, old versions). `presentation/tools/keyboard_check.py` checks a file for characters that are not on a normal keyboard |
 
 ## How to run
 

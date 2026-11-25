@@ -16,4 +16,4 @@ Working notes between the three of us and the Claude sessions of Goktug and Dan.
 
 ## The hand-in copy
 
-This folder is for working. It is not part of what we hand in. When we make the clean repo at the end, we leave out `coordination/`, `CLAUDE.md`, `research/raw/`, `course/` and `.claude/`. (`course/` holds the teachers' slides and papers, which are not ours to publish.) The AI-use statement in the notebook stays, and it has to match `AI-USAGE.md`.
+This folder is for working. It is not part of what we hand in. When we make the clean repo at the end, we leave out `coordination/`, `CLAUDE.md`, `research/raw/`, `course/`, `presentation/` and `.claude/`. (`course/` holds the teachers' slides and papers, which are not ours to publish.) The AI-use statement in the notebook stays, and it has to match `AI-USAGE.md`.

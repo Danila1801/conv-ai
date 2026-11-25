@@ -6,8 +6,8 @@ Newest entry on top. One entry per working session. Keep entries short.
 
 **Done**
 - Turned this repo from the presentation repo into the project repo, on the branch `final-project-setup` (not merged, a person does that).
-  - Removed `presentation/` and the old `project/README.md` placeholder. They are still in the history, last commit with them is `e1c909a`.
-  - Moved `notebooks/` to `course/notebooks/` and the character checker to `tools/keyboard_check.py`.
+  - Removed the old `project/README.md` placeholder (still in the history, commit `e1c909a`). `presentation/` stays as it was.
+  - Moved `notebooks/` to `course/notebooks/`.
   - New: `README.md`, `WORKSPLIT.md`, `coordination/`, `docs/`, `research/`, `notebook/`. `CLAUDE.md` keeps the four old rules and adds the project rules.
 - Brief rewritten around the assignment's requirements (`docs/project-brief.md`). The earlier "how to stand out" part was dropped on Goktug's instruction.
 

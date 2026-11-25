@@ -35,7 +35,7 @@ Nothing.
 
 ## Waiting on a person
 
-- Goktug or Dan: look at the branch `final-project-setup` and merge it into `main`. It removes `presentation/` and the old `project/` placeholder and moves `notebooks/` to `course/notebooks/`.
+- Goktug or Dan: look at the branch `final-project-setup` and merge it into `main`. It removes the old `project/` placeholder and moves `notebooks/` to `course/notebooks/`. `presentation/` stays as it was.
 - Dan: check that Antonia has access to this repo.
 - Goktug: check on his PC whether the LoRA adapter from Notebook 2 still exists, and which GPU the PC has (`nvidia-smi`).
 - Goktug: his local course folder (`Desktop\Period 2\CAI`) may hold files that are not in the repo yet. To be compared and added from a session that runs on his PC.

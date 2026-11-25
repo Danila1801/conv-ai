@@ -5,8 +5,6 @@
 - Keyboard-only characters everywhere: write -> for arrows and - for dashes, no middle dots, curly quotes or ellipsis characters. Run presentation/tools/keyboard_check.py before sharing.
 - Never commit API keys.
 
-The character checker moved with the repo clean-up. It is now at `tools/keyboard_check.py`.
-
 # Working on the final project
 
 More than one Claude session works here (Goktug's and Dan's). They do not share a chat. This file and the `coordination/` folder are how they stay in step. Antonia works without Claude, so anything she needs must be readable by a person.
@@ -53,4 +51,4 @@ Commit subject: work package letter, then the result as a plain sentence. Exampl
 
 ## Not part of the hand-in
 
-At the end the group makes a clean copy of the repo for the hand-in. These paths stay behind: `CLAUDE.md`, `coordination/`, `research/raw/`, `course/`, `.claude/`. Do not put anything the notebook needs in them.
+At the end the group makes a clean copy of the repo for the hand-in. These paths stay behind: `CLAUDE.md`, `coordination/`, `research/raw/`, `course/`, `presentation/`, `.claude/`. Do not put anything the notebook needs in them.
