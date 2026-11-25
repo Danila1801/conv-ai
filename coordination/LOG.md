@@ -2,6 +2,27 @@
 
 Newest entry on top. One entry per working session. Keep entries short.
 
+## Wed 25 Nov 2026 (session 4), Goktug's Claude session (claude.ai, cloud)
+
+**Done**
+- Opened the five sources that were marked "to re-check": Jurafsky and Martin (chapter "Conversation and its Structure" and appendix K), Deriu et al. 2021, Bavaresco et al. 2025, Kambhampati et al. 2024, Howcroft et al. 2020. `docs/evidence.md` section 2 now says where each point sits. `DESIGN.md` and `docs/reading-list-notes.md` are updated to match.
+- `CLAUDE.md`: the line about Antonia now says she has the free Claude plan. Goktug said so in the chat.
+
+**Found**
+- On the book's site, `25.pdf` is now "Discourse Coherence". "Conversation and its Structure" is `26.pdf` in the release of 19 Aug 2026. We cite that release, as Lectures 1 and 2 do.
+- Kambhampati et al. 2024 is about planning. It shows that LLMs do not verify plans reliably. It says nothing about two LLMs checking each other. `DESIGN.md` section 5 now says that this step is ours.
+
+**Checked**
+- Each row 31 to 36 of `docs/evidence.md` was read in the copy named in its last column (arXiv copies for three papers).
+
+**Not checked**
+- Volume 54(1) and pages 755-810 of Deriu et al. on the publisher's page. The page did not open from this session.
+- The ACL Anthology PDF of Bavaresco et al. (the arXiv copy of 2 Jun 2025 was read).
+- The pilot has still not run with the real model.
+
+**Next**
+- Same as session 3: Dan or Antonia run the pilot, then decide who writes the final reply and build D and E.
+
 ## Wed 25 Nov 2026 (session 3), Goktug's Claude session (claude.ai, cloud)
 
 **Done**

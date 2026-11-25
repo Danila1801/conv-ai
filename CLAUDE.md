@@ -7,7 +7,7 @@
 
 # Working on the final project
 
-More than one Claude session works here (Goktug's and Dan's). They do not share a chat. This file and the `coordination/` folder are how they stay in step. Antonia works without Claude, so anything she needs must be readable by a person.
+More than one Claude session works here (Goktug's and Dan's). They do not share a chat. This file and the `coordination/` folder are how they stay in step. Antonia has only the free Claude plan, which is enough for a few questions but not for working sessions, so anything she needs must be readable by a person.
 
 ## Read first, in this order
 

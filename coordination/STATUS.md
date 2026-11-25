@@ -1,6 +1,6 @@
 # Status
 
-Last updated: Wed 25 Nov 2026 (session 3 of the day), by Goktug's Claude session.
+Last updated: Wed 25 Nov 2026 (session 4 of the day), by Goktug's Claude session.
 
 ## Where we are
 
@@ -25,7 +25,7 @@ States: not started, in progress, in review, done, blocked.
 | J | Human ratings | all | not started | | Thu 3 and Fri 4 Dec |
 | K | Agreement | Antonia | not started | | |
 | L to O | Notebook text | see `WORKSPLIT.md` | not started | | |
-| P | Reference check | Antonia | not started | | The list of traps is in `docs/reading-list-notes.md`, section 1. `docs/evidence.md`, section 2, lists the papers that still have to be opened again |
+| P | Reference check | Antonia | not started | | The list of traps is in `docs/reading-list-notes.md`, section 1. `docs/evidence.md`, section 2, says where each point sits in each paper and what is left to confirm (Deriu volume and pages) |
 | Q | Final run on Kaggle | Goktug | not started | | |
 | R, S, T | Division of labour, hand-in, defence practice | all | not started | | |
 
@@ -46,7 +46,7 @@ The pilot (`pilot/pilot.ipynb`) waits to be run on Kaggle. Nobody is editing it.
 
 Format: date, from, to, what is needed, what breaks without it.
 
-- 25 Nov, from Goktug's session, to a person: `CLAUDE.md` says "Antonia works without Claude". She now uses the free plan for questions. The line can be updated by a person. Nothing breaks if it stays.
+- None open. (25 Nov: the line about Antonia in `CLAUDE.md` was updated after Goktug said so.)
 
 ## Decisions taken
 
@@ -59,3 +59,4 @@ Format: date, from, to, what is needed, what breaks without it.
 | 25 Nov | Goktug | `presentation/` stays in the repo | We may still want the deck and the Q&A |
 | 25 Nov | Goktug | Who writes the final reply (Beginner or Expert) is decided after the pilot | Antonia's notes and draft 1 differ, and the pilot can show which works better |
 | 25 Nov | Goktug | Canvas files and the reading list are the first source for every method we use | It is what the assignment asks for, and it keeps the references safe |
+| 25 Nov | Goktug | For Jurafsky and Martin we cite the release of 19 Aug 2026 | Lectures 1 and 2 cite that release. The chapter numbers differ from the January files |

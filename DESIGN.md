@@ -11,6 +11,8 @@ Two choices wait for the TAs (marked "waits for TA"). Six things can only be set
 - Each choice now names the Canvas file and page behind it. The full table is `docs/evidence.md`.
 - Not taken over: a fine-tuned Expert from Notebook 2 (reasons in section 3), and a text marker like "FINAL ANSWER:" (we use tags, as Notebook 4 does).
 
+Later on 25 Nov the five sources that were marked "to re-check" were opened. Two sentences changed because of it: what Kambhampati et al. can be cited for (section 5), and which release of Jurafsky and Martin we cite (section 1).
+
 Each decision is written the same way: what we chose, why, what else we could have done, which course material it connects to, and what would make us change it. Numbers that we picked ourselves are marked "our setting". They sit at the top of the notebook as variables.
 
 Sources are marked: (checked) = opened and confirmed, (measured) = we ran it, (to re-check) = taken from our reading notes, has to be opened again before it becomes a reference in the notebook.
@@ -34,7 +36,7 @@ Sources are marked: (checked) = opened and confirmed, (measured) = we ran it, (t
 **Why.**
 1. It is what the assignment describes: the Beginner starts and may quote the history, the Expert knows the reviews, the Beginner does not.
 2. In both options the Beginner has no reviews, so what it needs has to come through the conversation. That is why the conversation is needed and why the number of turns means something.
-3. It follows how conversation is described in Lecture 1 (Conversation and its Structure, 28 Oct, PDF pages 6 and 16): the Beginner's question and the Expert's answer are an adjacency pair, a follow-up is a clarification sub-dialogue, and the final reply shows that the Beginner understood the Expert (grounding). Same ideas in Jurafsky and Martin, chapter "Conversation and its Structure", sections on turns, grounding and sub-dialogues (section list checked, wording to re-check).
+3. It follows how conversation is described in Lecture 1 (Conversation and its Structure, 28 Oct, PDF pages 6 and 16): the Beginner's question and the Expert's answer are an adjacency pair, a follow-up is a clarification sub-dialogue, and the final reply shows that the Beginner understood the Expert (grounding). Same ideas in Jurafsky and Martin, chapter "Conversation and its Structure", release of 19 Aug 2026, sections on grounding and on subdialogues (checked).
 4. The quote is added by code so it is exact. A small model that copies a 100-word dialogue can change it.
 5. The whole dialogue is in message 1, and the Beginner sums up what the user wants. The Post-training lecture (20 Nov, PDF page 36) showed that models do worse when a task is spread over several turns, and recover when everything is in one message. It also fits the assignment, which speaks of a booking based on preferences and constraints: the Beginner's sentence is where those get named.
 6. Two LLMs with one prompt each, talking to each other, is how the synthetic dialogues in Lecture 1 were made (PDF page 23).
@@ -96,7 +98,7 @@ We only use dialogues about one place whose knowledge is reviews (no FAQs). Ther
 1. Qwen3-1.7B is the model of all four notebooks. Thinking is off there too, because it is slow.
 2. Both agents use the same model, so they differ only in prompt and knowledge.
 3. The sampling values are the ones the Qwen3 model card gives for non-thinking mode (checked). The Prompting lecture says to check the model card for this (PDF page 48).
-4. The judge is a different model from the agents. The Evaluation lecture (13 Nov, PDF page 49) warns that LLM judges lean towards their own kind of text. Qwen2.5-3B is also a notebook model, so we need no permission for it (TA question 2 asks anyway).
+4. The judge is a different model from the agents. The Evaluation lecture (13 Nov, PDF page 49) warns that LLM judges lean towards their own kind of text. In the paper behind it, the judges agree less with people on machine text than on human text (Bavaresco et al. 2025, section 4, checked). Qwen2.5-3B is also a notebook model, so we need no permission for it (TA question 2 asks anyway).
 5. The judge decodes greedily so its scores are the same on every run, like the evaluators in Notebook 4.
 
 **Other options.** Qwen2.5-3B for the agents: the pilot can show if it is needed. Greedy decoding for the agents: the model card gives sampling values for this mode and warns against greedy decoding in thinking mode, so we follow the card. With sampling we fix the seed and save every conversation, so the numbers in the notebook are the ones we analysed.
@@ -115,7 +117,7 @@ We only use dialogues about one place whose knowledge is reviews (no FAQs). Ther
 3. Code decides whether the conversation is over, not a model. So it always ends, and we can count how it ended.
 4. The shortest conversation is 3 or 4 messages and the longest 7 or 8, so "turns until completion" can differ between conversations.
 
-**Other options.** A fixed number of turns: then the turn count is the same everywhere and measures nothing. A plain text marker like "FINAL ANSWER:": it works too, but Notebook 4 already uses tags and they are easier to cut out. A third model as referee: more calls, and two LLMs agreeing is no proof that the reply is right (Kambhampati et al. 2024, to re-check).
+**Other options.** A fixed number of turns: then the turn count is the same everywhere and measures nothing. A plain text marker like "FINAL ANSWER:": it works too, but Notebook 4 already uses tags and they are easier to cut out. A third model as referee: more calls, and LLMs are not reliable at checking output. Kambhampati et al. 2024 (section 2.2, checked) show this for plans. That it also holds for a referee in our conversations is our own step.
 
 ## 6. Which dialogues, and how many
 
@@ -137,7 +139,7 @@ Reported per Expert version as mean and median, in one table and one figure. A a
 
 Only if there is time: ROUGE-L and BERTScore of the final reply against the dataset's reference answer, with the functions from Notebook 3.
 
-**Course link.** The Evaluation lecture (13 Nov, PDF pages 5 and 6) names task success rate and dialogue efficiency as the metrics for task-oriented dialogue, and counts turns in its example. Efficiency measured as length in turns is also in Jurafsky and Martin, appendix "Frame-Based Dialogue Systems", section on evaluating task-based dialogue (checked). Deriu et al. 2021, section on task-oriented systems (to re-check). Counting tokens is our own extension of "length".
+**Course link.** The Evaluation lecture (13 Nov, PDF pages 5 and 6) names task success rate and dialogue efficiency as the metrics for task-oriented dialogue, and counts turns in its example. Efficiency measured as length in turns is also in Jurafsky and Martin, appendix "Frame-Based Dialogue Systems", section on evaluating task-based dialogue (checked), and in Deriu et al. 2021, section 3.4 (checked in the arXiv copy). Counting tokens is our own extension of "length".
 
 ## 8. The LLM judge
 
@@ -157,7 +159,7 @@ The judge sees the dialogue with the user, the review sentences the dataset mark
 2. These criteria were made for exactly this task and come with definitions (Zhao et al. 2023, checked).
 3. A 1 to 5 scale, because we rate the same conversations by hand and nobody can rate "0.73".
 4. One criterion per call keeps each prompt short for a small model.
-5. The judge does not reason step by step first. The Evaluation lecture reports that chain-of-thought did not reliably improve agreement with people (PDF page 52).
+5. The judge does not reason step by step first. The Evaluation lecture reports that chain-of-thought did not reliably improve agreement with people (PDF page 52). The paper behind that slide says the same (Bavaresco et al. 2025, appendix H, checked).
 
 **Other options.** Notebook 3's coherence judge unchanged: it does not answer the fulfilment question. All criteria in one call: fewer calls, but small models mix the scores up.
 
@@ -215,4 +217,4 @@ The pilot (`pilot/pilot.ipynb`) runs 6 dialogues, 3 hotel and 3 restaurant, with
 
 ## 13. Where the choices come from
 
-`docs/evidence.md` has one row per choice: the source, the page or cell, what it says, and when we checked it. Canvas files (lectures, notebooks, the assignment) come first, then the reading list. Four reading-list papers and the wording of one book chapter still have to be opened again before the notebook cites them.
+`docs/evidence.md` has one row per choice: the source, the page or cell, what it says, and when we checked it. Canvas files (lectures, notebooks, the assignment) come first, then the reading list. All sources in it were opened by 25 Nov. Left to confirm: the volume and pages of Deriu et al. on the publisher's page.

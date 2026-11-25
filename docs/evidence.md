@@ -4,7 +4,7 @@ For every choice in `DESIGN.md` this table names the course material behind it. 
 
 - "Page" is the page of the PDF file in `course/lectures/`. It is not always the number printed on the slide.
 - "Checked" means: the file was opened and the point was found on that page or in that cell, on the date given. `research/tools/find_in_slides.py` finds the page of a phrase in a lecture PDF.
-- Section 2 lists what still has to be opened again before it can be a reference in the notebook.
+- Section 2 is the reading list. All of it was opened by 25 Nov. What is left to confirm is listed under its table.
 
 ## 1. Canvas material (checked)
 
@@ -31,8 +31,8 @@ For every choice in `DESIGN.md` this table names the course material behind it. 
 | 19 | The reply is inside a tag that code cuts out (5) | Notebook 4 | Q4 (`<output>`), Tree-of-Thoughts step 3 (`<answer>`) | The course does it the same way | 25 Nov |
 | 20 | Turns as a metric, and task success (7) | Evaluation lecture, 13 Nov. Lecture 2, 30 Oct | pages 5 and 6. Pages 8 and 20 | Task-oriented dialogue is measured by task success rate and dialogue efficiency. The example counts 3 turns. Success means task completion | 25 Nov |
 | 21 | Judge returns JSON inside tags (8) | Notebook 3 | `query_qwen_as_a_judge` | Coherence judge with `<JSON>` tags and a parser | 25 Nov |
-| 22 | The judge is another model than the agents (4, 8) | Evaluation lecture | pages 49, 51, 53 | LLM judges agree less with people on machine text and may prefer their own style. Other biases: position, length, style. Open models can be reproduced | 25 Nov |
-| 23 | No chain-of-thought for the judge (8) | Evaluation lecture | page 52 | Chain-of-thought did not reliably improve agreement with people | 25 Nov, slide only |
+| 22 | The judge is another model than the agents (4, 8) | Evaluation lecture | pages 49, 51, 53 | LLM judges agree less with people on machine text and may prefer their own style. Other biases: position, length, style. Open models can be reproduced | 25 Nov, slide. The paper behind page 49: row 34 |
+| 23 | No chain-of-thought for the judge (8) | Evaluation lecture | page 52 | Chain-of-thought did not reliably improve agreement with people | 25 Nov, slide. The paper behind it: row 34 |
 | 24 | We rate each conversation on a 1 to 5 scale (9) | Evaluation lecture | pages 15 and 16 | Per-dialogue rating captures the overall quality. Likert ratings can score one model at a time | 25 Nov |
 | 25 | Rating guide with clear questions and examples (9) | Evaluation lecture | page 21 | Be specific, give examples, use the same scales, test the questions first | 25 Nov |
 | 26 | Cohen's kappa, maybe Fleiss' kappa (9) | Evaluation lecture | page 19 | Cohen's kappa for 2 raters, Fleiss' kappa for more | 25 Nov |
@@ -44,17 +44,22 @@ For every choice in `DESIGN.md` this table names the course material behind it. 
 
 ## 2. Reading list
 
-| # | Choice (section) | Source | What we take from it | Status |
-| --- | --- | --- | --- | --- |
-| 30 | Judge criteria and the hard part of the task (3, 8) | Zhao et al. 2023, "What do others think?", SIGDIAL, pp. 309-323 | Human evaluation with Appropriateness, Aspect Accuracy, Sentiment Accuracy on a 5-point scale. Models are weakest on Sentiment Accuracy | Checked 24 Nov in the ACL Anthology PDF |
-| 31 | Turns as efficiency (7) | Jurafsky and Martin, appendix "Frame-Based Dialogue Systems", draft of 6 Jan 2026, section K.0.2 | Task success, slot error rate, and efficiency as dialogue length in seconds or turns | Checked 24 Nov |
-| 32 | Adjacency pairs, grounding, sub-dialogues (1) | Jurafsky and Martin, chapter "Conversation and its Structure", draft of 6 Jan 2026 | The same ideas as Lecture 1 | Section list checked 24 Nov. The wording has to be opened again |
-| 33 | Task success and dialogue efficiency (7) | Deriu et al. 2021, Artificial Intelligence Review 54 | Evaluation of task-oriented systems | To open again. Read only through a summary so far |
-| 34 | Check the judge against people (8, 9) | Bavaresco et al. 2025, ACL short papers | LLM judges have to be validated against human judgments. Kappa for categories, Spearman for grades | To open again. Read only through a summary so far |
-| 35 | Two LLMs agreeing is no proof (5) | Kambhampati et al. 2024, ICML | LLMs cannot verify their own output, outside checks are needed | To open again. Read only through a summary so far |
-| 36 | Each criterion has a name, a definition and a scale (8) | Howcroft et al. 2020, INLG (named in Notebook 3) | What to report about a human evaluation | To open again. Read only through a summary so far |
+All seven were opened. "Where" is the section in the copy we read.
 
-A second try to open rows 32 to 36 on 25 Nov did not go through. Until they are opened again, the notebook cites them only where a Canvas file in section 1 says the same thing.
+| # | Choice (section) | Source | Where | What we take from it | Checked |
+| --- | --- | --- | --- | --- | --- |
+| 30 | Judge criteria and the hard part of the task (3, 8) | Zhao et al. 2023, "What do others think?", SIGDIAL, pp. 309-323 | Human evaluation table | Human evaluation with Appropriateness, Aspect Accuracy, Sentiment Accuracy on a 5-point scale. Models are weakest on Sentiment Accuracy | 24 Nov, ACL Anthology PDF |
+| 31 | Turns as efficiency (7) | Jurafsky and Martin, appendix K "Frame-Based Dialogue Systems", release of 19 Aug 2026 | Section K.0.2, Evaluating Task-Based Dialogue | Task success rate, slot error rate, and efficiency as the length of the dialogue in seconds or in turns | 25 Nov, live file. 24 Nov, January 2026 file, same section |
+| 32 | Adjacency pairs, grounding, sub-dialogues (1) | Jurafsky and Martin, chapter "Conversation and its Structure", release of 19 Aug 2026 (chapter 26 there, chapter 25 in the January 2026 files) | Sections 26.1.3 Grounding and 26.1.4 Subdialogues and Dialogue Structure | The hearer signals that they understood. A question expects an answer (adjacency pair). A clarification or a correction can sit between the two parts | 25 Nov, live file. The chapter calls itself a first stub. "Presentation and acceptance phase" is the wording of Lecture 1, we did not look for it in the book |
+| 33 | Task success and dialogue efficiency (7) | Deriu et al. 2021, "Survey on evaluation methods for dialogue systems", Artificial Intelligence Review | Section 3.4 Evaluation. 3.4.1 for PARADISE. 2.2 for what a good evaluation method needs | Task-success rate: did the system meet the user's goal. Dialogue efficiency: number of turns or elapsed time | 25 Nov, arXiv:1905.04071 version 2 (26 Jun 2020). Volume 54(1) and pages 755-810 are only from a search result |
+| 34 | Check the judge against people (8, 9). No chain-of-thought for the judge (8). The judge is not the agents' model (4) | Bavaresco et al. 2025, "LLMs instead of Human Judges?", ACL 2025 short papers, pp. 238-255 | Section 3 for the statistics. Sections 1 and 5 for the conclusion. Appendix H for chain-of-thought. Section 4 for human against machine text | Cohen's kappa for categories and Spearman for grades. An LLM judge has to be validated against human ratings for the task first. Chain-of-thought gave no reliable gain. The models agree more with people on human-written text than on machine text | 25 Nov, arXiv:2406.18403 version 3 (2 Jun 2025). Volume and pages from the ACL Anthology page. The Anthology PDF itself was not opened |
+| 35 | No third LLM as referee for stopping (5) | Kambhampati et al. 2024, "Position: LLMs Can't Plan, But Can Help Planning in LLM-Modulo Frameworks", ICML, PMLR 235, pp. 22895-22907 | Section 2.2. Section 3.1 for outside critics | LLMs are not reliable at verifying plans, so self-critique does not reliably help. Correctness has to come from outside verifiers | 25 Nov, arXiv:2402.01817 version 3 and the PMLR page. The paper is about planning. It says nothing about two LLMs checking each other. Using it for our case is our own step, and the notebook has to say so |
+| 36 | Each criterion has a name, a definition and a scale (8, 9) | Howcroft et al. 2020, "Twenty Years of Confusion in Human Evaluation", INLG, pp. 169-182 (named in Notebook 3) | Section 5 and Table 7 | A human evaluation should report at least the criterion's name and definition, the scale, and the exact question and instructions the raters got. Based on 165 INLG and ENLG papers from 2000 to 2019 | 25 Nov, ACL Anthology PDF. It gives no standard definitions to adopt. Ours come from Zhao et al. |
+
+Left to do before these become references in the notebook:
+
+- Deriu et al.: confirm volume, issue and pages on the publisher's page, https://doi.org/10.1007/s10462-020-09866-x. That page did not open in the assistant's session.
+- Trap in the book: on the book's site the file `25.pdf` is now "Discourse Coherence". "Conversation and its Structure" is `26.pdf` in the release of 19 Aug 2026. Lectures 1 and 2 cite that release, so we cite it too. The January 2026 files are under `old_jan26/`.
 
 ## 3. Our own findings
 
