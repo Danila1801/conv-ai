@@ -5,7 +5,7 @@ This is a proposal from 25 Nov. If something does not fit, change it here and sa
 ## How we split
 
 - Everyone owns one clear part of the notebook, so in the oral defence each of us can explain our own part without help.
-- Goktug and Dan have Claude. Antonia does not, so her parts are the ones where a person is needed anyway: the human evaluation, checking the references, and the text that frames the project.
+- Goktug and Dan have paid Claude plans. Antonia has the free plan, which is fine for questions but not for long working sessions. So her parts are the ones where a person is needed anyway: the human evaluation, checking the references, and the text that frames the project.
 - All three of us rate conversations for the human evaluation. That part cannot be given to one person.
 - All three of us read the whole notebook before we hand in.
 - Each notebook section is its own file while we work, so two people never edit the same file. One script joins them into the single .ipynb at the end.
