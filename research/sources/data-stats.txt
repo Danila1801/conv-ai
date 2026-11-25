@@ -1,0 +1,70 @@
+== knowledge.json ==
+domain=hotel: entities=33 reviews total=330 review sentences total=1676 faqs total=1219
+   reviews per entity: n=33 min=10 q1=10 median=10 q3=10 max=10 mean=10.00
+   review sentences per entity: n=33 min=39 q1=47 median=52 q3=54 max=64 mean=50.79
+   faqs per entity: n=33 min=34 q1=37 median=37 q3=38 max=39 mean=36.94
+   example entity keys: ['name', 'reviews', 'faqs'] | name: A AND B GUEST HOUSE
+   example review keys: ['traveler_type', 'sentences'] | metadata: None
+domain=restaurant: entities=110 reviews total=1100 review sentences total=6337 faqs total=1650
+   reviews per entity: n=110 min=10 q1=10 median=10.0 q3=10 max=10 mean=10.00
+   review sentences per entity: n=110 min=43 q1=52 median=57.0 q3=63 max=85 mean=57.61
+   faqs per entity: n=110 min=15 q1=15 median=15.0 q3=15 max=15 mean=15.00
+   example entity keys: ['name', 'reviews', 'faqs'] | name: MIDSUMMER HOUSE RESTAURANT
+   example review keys: ['traveler_type', 'dishes', 'drinks', 'sentences'] | metadata: None
+
+== train ==
+instances: 32604 | labels: 32604
+target=True: 16897 | with response: 16897
+turns per instance (all): n=32604 min=1 q1=3 median=7.0 q3=11 max=45 mean=7.48
+turns per instance (target): n=16897 min=3 q1=5 median=7 q3=11 max=45 mean=8.31
+last speaker: {'U': 32604}
+words in dialogue history (target): n=16897 min=17 q1=66 median=105 q3=154 max=767 mean=115.00
+knowledge snippets per target instance: n=16897 min=1 q1=2 median=3 q3=5 max=66 mean=3.83
+  review sentences per target instance: n=16897 min=0 q1=2 median=3 q3=5 max=66 mean=3.55
+  faq items per target instance: n=16897 min=0 q1=0 median=0 q3=0 max=8 mean=0.28
+  only reviews=13529 only faqs=84 both=3284
+entities per target instance: {1: 16286, 2: 465, 3: 114, 4: 20, 5: 11, 6: 1}
+domains (entity mentions): {'hotel': 9610, 'restaurant': 8089}
+knowledge references not found in knowledge.json: 0
+reference response length in words: n=16897 min=13 q1=20 median=23 q3=26 max=70 mean=24.11
+example last user turn: I have back issues. Does this place have comfortable beds?
+example response: The Bridge Guest House is known for having pretty uncomfortable beds according to most guests. Only one guest found it to be comfortable.
+example knowledge refs: [{'domain': 'hotel', 'entity_id': 11, 'doc_type': 'review', 'doc_id': 3, 'sent_id': 1}, {'domain': 'hotel', 'entity_id': 11, 'doc_type': 'review', 'doc_id': 2, 'sent_id': 6}, {'domain': 'hotel', 'entity_id': 11, 'doc_type': 'review', 'doc_id': 4, 'sent_id': 3}] ... total 5
+
+== val ==
+instances: 4173 | labels: 4173
+target=True: 2129 | with response: 2129
+turns per instance (all): n=4173 min=1 q1=5 median=7 q3=11 max=31 mean=7.70
+turns per instance (target): n=2129 min=3 q1=5 median=7 q3=11 max=27 mean=8.44
+last speaker: {'U': 4173}
+words in dialogue history (target): n=2129 min=22 q1=69 median=108 q3=159 max=436 mean=118.00
+knowledge snippets per target instance: n=2129 min=1 q1=3 median=4 q3=5 max=28 mean=4.07
+  review sentences per target instance: n=2129 min=0 q1=2 median=3 q3=5 max=28 mean=3.85
+  faq items per target instance: n=2129 min=0 q1=0 median=0 q3=0 max=5 mean=0.23
+  only reviews=1762 only faqs=4 both=363
+entities per target instance: {1: 1930, 2: 146, 3: 39, 4: 9, 5: 5}
+domains (entity mentions): {'hotel': 1554, 'restaurant': 846}
+knowledge references not found in knowledge.json: 0
+reference response length in words: n=2129 min=14 q1=20 median=22 q3=26 max=61 mean=23.61
+example last user turn: Are their bathrooms adequately sanitized?
+example response: Yes, most of the guests at Hobsons House have rated the bathrooms very high on cleanliness, although there is at least one report of stray hairs in the bathroom.
+example knowledge refs: [{'domain': 'hotel', 'entity_id': 20, 'doc_type': 'review', 'doc_id': 9, 'sent_id': 4}, {'domain': 'hotel', 'entity_id': 20, 'doc_type': 'review', 'doc_id': 6, 'sent_id': 4}, {'domain': 'hotel', 'entity_id': 20, 'doc_type': 'review', 'doc_id': 4, 'sent_id': 2}] ... total 3
+
+== test ==
+instances: 5475 | labels: 5475
+target=True: 2798 | with response: 2798
+turns per instance (all): n=5475 min=1 q1=5 median=7 q3=11 max=31 mean=7.58
+turns per instance (target): n=2798 min=3 q1=5 median=7.0 q3=11 max=29 mean=8.36
+last speaker: {'U': 5475}
+words in dialogue history (target): n=2798 min=16 q1=68 median=107.0 q3=157 max=420 mean=116.81
+knowledge snippets per target instance: n=2798 min=1 q1=2 median=4.0 q3=5 max=60 mean=4.21
+  review sentences per target instance: n=2798 min=0 q1=2 median=3.0 q3=5 max=60 mean=3.92
+  faq items per target instance: n=2798 min=0 q1=0 median=0.0 q3=0 max=6 mean=0.29
+  only reviews=2154 only faqs=13 both=631
+entities per target instance: {1: 2362, 2: 344, 4: 22, 3: 67, 5: 3}
+domains (entity mentions): {'hotel': 1907, 'restaurant': 1447}
+knowledge references not found in knowledge.json: 0
+reference response length in words: n=2798 min=9 q1=20 median=23.0 q3=26 max=69 mean=23.98
+example last user turn: Does this hotel have rooms with a good view of the neighborhood?
+example response: Apparently it does according to previous customers, they say that the view is beautiful especially on the higher floors.
+example knowledge refs: [{'domain': 'hotel', 'entity_id': 7, 'doc_type': 'review', 'doc_id': 2, 'sent_id': 1}, {'domain': 'hotel', 'entity_id': 7, 'doc_type': 'review', 'doc_id': 3, 'sent_id': 1}] ... total 2
