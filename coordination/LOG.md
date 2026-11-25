@@ -2,6 +2,29 @@
 
 Newest entry on top. One entry per working session. Keep entries short.
 
+## Wed 25 Nov 2026 (evening), Goktug's Claude session (claude.ai, cloud)
+
+**Done**
+- `DESIGN.md`, draft 1: twelve sections, each with what we chose, why, the other options and the course link. Branch `wp-a-design`.
+- `pilot/pilot.py` and `pilot/pilot.ipynb`: 6 test dialogues, Expert A (direct) and Expert B (step by step), conversation loop, stopping by `<answer>` tag with a cap of 7 messages, saves `pilot_conversations.jsonl`.
+- `notebook/build_notebook.py`: builds a .ipynb from a .py file with `# %%` cell marks.
+- Added the files from Goktug's local course folder that the repo did not have (three lectures, two teasers, Notebooks 3 and 4, the reading list). `presentation/` was put back.
+
+**Checked**
+- `python pilot/test_loop.py <data dir>` passes: 12 conversations with canned replies, every stopping case (quick, follow-up, never answers, answer too early) ends as section 5 of the design says.
+- The code cells of `pilot/pilot.ipynb` compile, and the notebook file passes the nbformat check.
+- Qwen3 model card opened for the sampling values and the context length used in the design.
+- Size of the Expert's first prompt in the six pilot dialogues: about 1,020 words on average for Expert A and 1,070 for Expert B. This is a word count from the canned run, not a real token count.
+
+**Not checked**
+- The pilot has never run with the real model. Nothing is known yet about role keeping, the step format of Expert B, or speed.
+- The design has not been reviewed by anyone. Sources marked "to re-check" in it have not been opened again.
+
+**Next**
+- Goktug runs the pilot on Kaggle. With the result: fix prompts and settings, then build work packages D and E properly in `notebook/sections/`.
+- After the TA answers on Friday: settle sections 2 and 10 of the design.
+- Dan can start C, and G once the criteria in section 8 are agreed.
+
 ## Wed 25 Nov 2026, Goktug's Claude session (claude.ai, cloud)
 
 **Done**
