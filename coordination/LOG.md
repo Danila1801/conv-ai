@@ -2,7 +2,29 @@
 
 Newest entry on top. One entry per working session. Keep entries short.
 
-## Wed 25 Nov 2026 (evening), Goktug's Claude session (claude.ai, cloud)
+## Wed 25 Nov 2026 (session 3), Goktug's Claude session (claude.ai, cloud)
+
+**Done**
+- `DESIGN.md` is now draft 2. Antonia's design notes were compared with draft 1. Taken over: one `Agent` class and one conversation function with the Expert versions as a config table, the Beginner says what the user wants in its first message, every saved conversation carries its settings, and the option that the Expert writes the final reply after the Beginner agrees. Not taken over: a fine-tuned Expert from Notebook 2, and a plain text marker in place of tags. The list is at the top of `DESIGN.md`.
+- The pilot now runs both ways of writing the final reply: 6 dialogues x 2 Experts x 2 ways = 24 conversations.
+- `docs/evidence.md`: one row per design choice with the Canvas file, the PDF page or notebook cell, and the date it was checked.
+- `research/tools/find_in_slides.py`: finds the page of a phrase in a lecture PDF.
+
+**Checked**
+- `python pilot/test_loop.py <data dir>` passes: 24 conversations with canned replies, every stopping case for both ways of writing the reply.
+- `pilot/pilot.ipynb` was rebuilt, passes the nbformat check, and its code cells compile.
+- Every page number in section 1 of `docs/evidence.md` was looked up in the PDF files in `course/lectures/`. The notebook facts were looked up in `course/notebooks/`.
+
+**Not checked**
+- The pilot has still not run with the real model. Goktug's Kaggle account is not phone verified, so the GPU was locked.
+- Rows 32 to 36 of `docs/evidence.md` (four reading-list papers and the wording of one book chapter) could not be opened again in this session.
+
+**Next**
+- Dan or Antonia run the pilot on Kaggle (see `STATUS.md`).
+- With the result: decide who writes the final reply, fix prompts and settings, then build D and E in `notebook/sections/`.
+- Open rows 32 to 36 again.
+
+## Wed 25 Nov 2026 (session 2), Goktug's Claude session (claude.ai, cloud)
 
 **Done**
 - `DESIGN.md`, draft 1: twelve sections, each with what we chose, why, the other options and the course link. Branch `wp-a-design`.
