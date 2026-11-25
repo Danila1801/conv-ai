@@ -8,3 +8,20 @@ __pycache__/
 .DS_Store
 Thumbs.db
 .venv/
+
+# data and models are downloaded, not stored here
+data/
+models/
+outputs/adapter/
+*.safetensors
+*.bin
+*.pt
+
+# python and notebooks
+venv/
+
+# secrets and local settings
+.env.*
+.claude/settings.local.json
+
+# OS
