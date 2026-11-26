@@ -1,87 +1,64 @@
 # Conversational AI (VU, XB_0119), Group 7
 
-Everything for the course in one place: our paper presentation, the notebooks, the lectures and the final project.
 Group: Antonia Bulai, Danila Popusoi, Goktug Yildirim.
+
+This repo started as the place for our paper presentation (13 Nov 2026). The presentation is done, so the repo is now mainly for the **final project**. The presentation files are still here, in `presentation/`.
+
+## The final project
+
+We build a tutorial-style notebook with two LLM agents that talk to each other.
+
+A user asks something about a hotel or a restaurant. The dialogues come from the DSTC11 Track 5 data, the same data as in the course notebooks.
+The Beginner agent passes the request on and asks questions. The Expert agent has the customer reviews and answers from them.
+At the end they produce one reply that could be sent back to the user.
+
+We run at least 50 of these conversations with two different versions of the Expert and compare them:
+
+- with things we can count (number of turns, number of tokens),
+- with an LLM that judges the final reply,
+- with our own ratings on a small set, to see if the LLM judge agrees with us.
 
 ## What's coming up
 
 | When | What | Where |
 |---|---|---|
-| Fri 13 Nov 2026, 11:00 | **Our paper presentation** (10 min + 5 min Q&A) | HG-10A33 |
-| Wed 18 Nov, 25 Nov, 2 Dec | Quizzes 3, 4, 5 (best 4 of 5 count) | in class |
-| Fri 20 Nov 2026 | Midterm progress form | Canvas |
-| **Wed 9 Dec 2026, 23:59** | **Final project notebook** (Canvas says 18 Dec, Filip still has to confirm) | Canvas |
+| Fri 27 Nov 2026, 13:00 | TA office hour (our questions are in `docs/ta-questions.md`) | NU-2B17 |
+| Wed 2 Dec 2026 | Quiz 5 | in class |
+| Fri 4 Dec 2026, 13:00 | TA office hour | NU-2B17 |
+| **Wed 9 Dec 2026, 23:59** | **Final project notebook** (one .ipynb) | Canvas |
 | 10-11 Dec 2026 | Oral defence of the project | |
 | Mon 14 Dec 2026, 15:30 | Exam | |
 
-## The presentation (start here)
+## Where things are
 
-Paper: Peter & Devlin (2025), *Decentralising LLM Alignment: A Case for Context, Pluralism, and Participation*, AIES.
-PDF in `course/papers/`.
-
-| File | What it is |
+| Path | What is in it |
 |---|---|
-| `presentation/deck/Group7-v4.pdf` | **The deck we present.** 12 slides + backup (v4, 12 Nov 2026, after Antonia's review) |
-| `presentation/deck/Group7-v4.pptx` | Same deck, editable. Your script is in the speaker notes |
-| `presentation/deck/Group7-v4-speaker-cards.pdf` | Script per presenter, print it or keep it on your phone |
-| `presentation/qa/extra_qa.md` | Hard questions with answers, and who answers them |
-| `presentation/qa/group7-study-guide.pdf` | Paper explained, glossary, basic Q&A |
-| `presentation/qa/kimi_grill.md` | A second AI model reviewed the deck like a strict TA |
+| `WORKSPLIT.md` | Who does what, and by when |
+| `coordination/STATUS.md` | Where we are right now. Read this first |
+| `docs/project-brief.md` | The assignment in our own words, what we measured in the data, open points |
+| `docs/reading-list-notes.md` | Notes on the course readings and what we can cite them for |
+| `docs/ta-questions.md` | Questions for the TA office hour |
+| `research/tools/` | Small scripts we used to look at the data |
+| `research/sources/` | The output of those scripts |
+| `notebook/` | The final notebook (not started yet) |
+| `course/` | Lectures, papers, Canvas notes and the weekly notebooks (`course/notebooks/`, a1 has a filled version) |
+| `presentation/` | Our paper presentation from 13 Nov (deck, Q&A, old versions). `presentation/tools/keyboard_check.py` checks a file for characters that are not on a normal keyboard |
 
-### What changed in v4 (12 Nov 2026, from Antonia's comments)
+## How to run
 
-| Comment | Where it is now |
-|---|---|
-| The start makes no sense, too much NL vs US | Slides 1-5 rebuilt, the country comparison is gone |
-| Introduce RLHF as a solution first | Slide 2: GPT-3 vs InstructGPT, people preferred InstructGPT 85% of the time |
-| Importance of context | Slide 6: general chatbot vs a chatbot built for one context |
-| Importance of workers' environments | Slide 7: how labelling conditions shape the data (Miceli & Posada 2022, Sama) |
-| Table of the solutions the paper compares | Slide 8: STELA, CCAI, PRISM, Rose, Multilingual Prism, Varshney, with the paper's own verdicts |
+There is no project notebook yet. The data scripts work like this:
 
-### Where everything is
+    git clone https://github.com/lkra/dstc11-track5.git data/dstc11-track5
+    python research/tools/inspect_data.py data/dstc11-track5/data
+    python research/tools/split_overlap.py data/dstc11-track5/data
 
-```
-presentation/
-  deck/          the current deck (v4): pdf, pptx, speaker cards + the scripts that build them
-  qa/            extra_qa.md (hard questions + answers, "New in deck v4" at the bottom), study guide, Kimi review
-  tools/         keyboard_check.py (character check), kimi_grill.py (AI review)
-  archive/       old versions v1, v2, v3, only for reference
-```
-
-**Who presents what:** P1 = slides 1-5 (why RLHF exists, its cost, the paper's claim), P2 = slides 6-8 (context, the workers, the table of earlier fixes), P3 = slides 9-12 (the two cases, pluralism, result, our view). Decide between us who is P1, P2 and P3.
-
-**Before Friday:** read your part out loud twice, then say it in your own words. Do one timed run on Thursday evening. Current planned narration: 8:40 (727 words, slow pace). Keep the full run under 9:30.
-
-### Changing the deck
-
-The slide text lives in `presentation/deck/build_deck.py`, so the deck and the speaker cards stay in sync. To rebuild (Windows with PowerPoint):
-
-```
-cd presentation/deck
-pip install python-pptx matplotlib pymupdf
-python charts.py
-python build_deck.py
-powershell -ExecutionPolicy Bypass -File export_pdf.ps1
-python build_cards.py
-python ../tools/keyboard_check.py Group7-v4.pptx Group7-v4.pdf
-```
-
-Small edits straight in the .pptx are fine too. Just tell the group in the chat.
-
-**House rules for slides:** a claim as the title, real numbers with a source line, a chart or diagram on every slide, a cool green palette, and only characters you can type on a keyboard (write `->`, not arrow symbols). `keyboard_check.py` has to print `OK`.
-
-## Folders
-
-```
-presentation/   deck (current), qa, tools, archive (v1, v2, v3)
-course/         lectures, papers, Canvas notes
-notebooks/      weekly notebooks (a1 has a filled version)
-project/        final project (tutorial-style notebook, due 9 Dec)
-```
+The `data/` folder is in `.gitignore`, so the dataset is never committed.
 
 ## Working together
 
 - Pull before you start: `git pull`
-- Commit small: `git add -A`, `git commit -m "what you changed"`, `git push`
-- Never commit API keys or `.env` files
-- Big binary files (videos, model weights) do not go in here
+- One branch per work package (see `WORKSPLIT.md`), then a pull request into `main`. One other person looks at it before it is merged.
+- Commit small, and say what you changed in the message.
+- When you stop, write where you are in `coordination/STATUS.md`.
+- Never commit API keys or `.env` files.
+- Big binary files (videos, model weights, the dataset) do not go in here.

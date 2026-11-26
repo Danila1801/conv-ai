@@ -1,0 +1,18 @@
+train review-only target instances: 13529
+    ('multi-entity', 'hotel') 206
+    ('multi-entity', 'restaurant') 334
+    ('single-entity', 'hotel') 7107
+    ('single-entity', 'restaurant') 5882
+    single-entity, by number of gold review sentences: {'1': 2120, '2-3': 5354, '4-6': 4554, '7+': 961}
+val review-only target instances: 1762
+    ('multi-entity', 'hotel') 81
+    ('multi-entity', 'restaurant') 102
+    ('single-entity', 'hotel') 1219
+    ('single-entity', 'restaurant') 360
+    single-entity, by number of gold review sentences: {'1': 190, '2-3': 728, '4-6': 527, '7+': 134}
+test review-only target instances: 2154
+    ('multi-entity', 'hotel') 187
+    ('multi-entity', 'restaurant') 205
+    ('single-entity', 'hotel') 1307
+    ('single-entity', 'restaurant') 455
+    single-entity, by number of gold review sentences: {'1': 325, '2-3': 817, '4-6': 560, '7+': 60}

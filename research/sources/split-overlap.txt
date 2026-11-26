@@ -1,0 +1,11 @@
+train: instances=32604 unique=29034 | target instances=16897 unique=16897
+val: instances=4173 unique=4095 | target instances=2129 unique=2129
+test: instances=5475 unique=5363 | target instances=2798 unique=2798
+val instances also in train: 4173 of 4173 | target instances: 2129 of 2129
+test instances also in train: 1073 of 5475 | target instances: 0 of 2798
+test instances also in val: 196 of 5475 | target instances: 0 of 2798
+val instances inside train: first index=20 last index=32603 contiguous block=no
+train/logs_bkp.json: instances=28431 | val instances inside it: 981
+train/bkp/labels.json: items=28431 target=True: 14768
+train/bkp/logs.json: items=28431 target=True: -
+of the first 400 train instances, in val: 11
